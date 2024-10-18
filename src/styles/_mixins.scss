@@ -6,10 +6,15 @@
 	list-style: none;
 }
 
-
 @mixin border-radius($radius) {
 	@each $v in $vendors {
 		#{$v}border-radius: $radius;
+	}
+}
+
+@mixin transform($val) {
+	@each $v in $vendors {
+		#{$v}transform: $val;
 	}
 }
 

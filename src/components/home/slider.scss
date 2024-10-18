@@ -1,0 +1,19 @@
+@use "../../styles/mixins" as *;
+
+.main-slider{
+    img{
+        width: 100%;
+        height: calc(100vh - 110px);
+        object-fit: cover;
+        object-position: left top;
+
+        @media(min-width: 850px){
+            object-position: right top;
+        }
+    }
+
+    .carousel-caption{
+        bottom: 50%;
+        @include transform(translateY(50%));
+    }
+}
