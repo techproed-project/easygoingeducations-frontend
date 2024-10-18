@@ -4,6 +4,8 @@ import { Container, Nav, Navbar, Offcanvas } from "react-bootstrap";
 import { Logo } from "./logo";
 import { MainMenu } from "./main-menu";
 import { ButtonCallNow } from "./button-call-now";
+import { config } from "@/helpers/config";
+import Image from "next/image";
 
 export const MainMenubar = () => {
 	return (
@@ -18,12 +20,17 @@ export const MainMenubar = () => {
 				>
 					<Offcanvas.Header closeButton>
 						<Offcanvas.Title id="main-menu-title">
-							Offcanvas
+							<Image
+								src="/img/logos/logo-one-line.png"
+								width={253}
+								height={29}
+								alt={config.project.name}
+							/>
 						</Offcanvas.Title>
 					</Offcanvas.Header>
 					<Offcanvas.Body>
 						<MainMenu className="justify-content-center flex-grow-1" />
-                        <ButtonCallNow/>
+						<ButtonCallNow />
 					</Offcanvas.Body>
 				</Navbar.Offcanvas>
 			</Container>

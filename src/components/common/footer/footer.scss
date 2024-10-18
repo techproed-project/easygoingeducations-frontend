@@ -1,0 +1,25 @@
+@use "../../../styles/variables" as *;
+
+footer{
+    background-color: $color2;
+    color: $color3;
+    padding: 70px 0;
+
+    a{
+        color: $color1 !important;
+    }
+
+    .nav{
+        flex-direction: column;
+        flex-wrap: nowrap;
+
+        i{
+            color: $color5;
+        }
+
+        @media(min-width: 768px){
+            flex-direction: row;
+            flex-wrap: wrap;
+        }
+    }
+}
