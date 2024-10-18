@@ -1,0 +1,7 @@
+@use "../../styles/variables" as *;
+
+.featured-courses{
+    background-image: linear-gradient(45deg, $color1-op-10, $color2-op-10);
+    padding-top:70px;
+    padding-bottom:70px;
+}

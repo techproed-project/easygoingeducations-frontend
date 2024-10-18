@@ -1,6 +1,7 @@
 import React from "react";
 import courses from "@/helpers/data/courses.json";
 import { Col, Container, Row } from "react-bootstrap";
+import { CourseCard } from "./course-card";
 
 export const Courses = ({ featured }) => {
 	let filteredCourses = courses;
@@ -11,9 +12,11 @@ export const Courses = ({ featured }) => {
 
 	return (
 		<Container>
-			<Row xs={1} md={2} xl={3} className="g-5">
+			<Row xs={1} md={2} lg={3} xxl={4} className="g-5">
 				{filteredCourses.map((item) => (
-					<Col key={item.id}>{item.title}</Col>
+					<Col key={item.id}>
+						<CourseCard {...item} />
+					</Col>
 				))}
 			</Row>
 		</Container>

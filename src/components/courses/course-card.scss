@@ -1,0 +1,30 @@
+@use "../../styles/variables" as *;
+@use "../../styles/mixins" as *;
+
+.course-card {
+	height: 100%;
+
+	img {
+		width: 100%;
+		height: auto;
+	}
+
+	.card-title {
+		margin-top: 20px;
+        color: $color2;
+	}
+
+	.card-footer {
+		background: none;
+		padding-top: 10px;
+		padding-bottom: 10px;
+		border-color: $color2-op-10;
+		@include flex();
+		font-weight: 600;
+		font-size: 1.2rem;
+
+		i {
+			color: $color2;
+		}
+	}
+}
