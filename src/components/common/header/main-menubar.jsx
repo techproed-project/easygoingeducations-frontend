@@ -9,7 +9,7 @@ import Image from "next/image";
 
 export const MainMenubar = () => {
 	return (
-		<Navbar expand="lg" sticky="top" className="bg-body-tertiary">
+		<Navbar expand="lg" sticky="top" className="bg-body-tertiary" collapseOnSelect >
 			<Container>
 				<Logo />
 				<Navbar.Toggle aria-controls="main-menu" />
@@ -17,6 +17,7 @@ export const MainMenubar = () => {
 					id="main-menu"
 					aria-labelledby="main-menu-title"
 					placement="end"
+					
 				>
 					<Offcanvas.Header closeButton>
 						<Offcanvas.Title id="main-menu-title">
