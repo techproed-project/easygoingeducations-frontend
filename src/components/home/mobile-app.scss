@@ -1,0 +1,6 @@
+@use "../../styles/variables" as *;
+
+.mobile-app{
+    background-image: linear-gradient(45deg, $color1-op-10, $color2-op-10);
+    padding:50px;
+}
