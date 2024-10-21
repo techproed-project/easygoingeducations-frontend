@@ -1,0 +1,14 @@
+@use "../../styles/variables" as *;
+@use "../../styles/mixins" as *;
+
+.instructors{
+    h2{
+        background-color: $color1-op-30;
+        padding: 30px;
+        text-align: center;
+        height: 100%;
+        color: $color2;
+        @include border-radius(5px);
+        @include flex($ai: center, $jc: center);
+    }
+}

@@ -1,3 +1,4 @@
+import { Instructors } from "@/components/about/instructors";
 import { Welcome } from "@/components/about/welcome";
 import { PageHeader } from "@/components/common/page-header/page-header";
 import { Spacer } from "@/components/common/spacer/spacer";
@@ -15,6 +16,8 @@ const Page = () => {
 			<PageHeader title="About Us" />
             <Spacer/>
 			<Welcome />
+            <Spacer/>
+            <Instructors/>
             <Spacer/>
 		</>
 	);
