@@ -1,0 +1,30 @@
+@use "../../styles/variables" as *;
+@use "../../styles/mixins" as *;
+
+.event-card {
+	height: 100%;
+
+	img {
+		width: 100%;
+		height: auto;
+	}
+
+	.card-title {
+		margin-top: 20px;
+        color: $color2;
+		font-size: 1.5rem;
+	}
+
+	.card-subtitle {
+		padding-top: 20px;
+		padding-bottom: 10px;
+		@include flex();
+		font-weight: 600;
+		font-size: 1.2rem;
+		color: $color2;
+
+		i {
+			color: $color1;
+		}
+	}
+}
