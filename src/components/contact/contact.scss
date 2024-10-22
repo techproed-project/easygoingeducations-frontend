@@ -1,0 +1,43 @@
+@use "../../styles/variables" as *;
+@use "../../styles/mixins" as *;
+
+.contact{
+    h3{
+        color: $color2;
+    }
+
+    p{
+        color:$color2-op-50;
+    }
+
+    .card{
+        width: 98%;
+        margin:auto;
+
+        @media(min-width: 768px){
+            width: 70%;
+        }
+
+        @media(min-width: 992px){
+            width: 60%;
+        }
+
+        @media(min-width: 1200px){
+            width: 50%;
+        }
+    }
+
+    .contact-row{
+        @include flex($fw: nowrap);
+    }
+
+    .contact-menu{
+        flex-direction: column;
+        display: none;
+
+        @media(min-width: 768px){
+            display: flex;
+        }
+
+    }
+}
