@@ -1,7 +1,16 @@
-import React from 'react'
+import { config } from "@/helpers/config";
+import React from "react";
 
 export const Map = () => {
-  return (
-    <div>Map</div>
-  )
-}
+	return (
+		<iframe
+			src={config.contact.map.embed}
+			width="100%"
+			height="450"
+			style={{ border:"0", display: "block"}}
+			allowFullScreen=""
+			loading="lazy"
+			referrerPolicy="no-referrer-when-downgrade"
+		></iframe>
+	);
+};

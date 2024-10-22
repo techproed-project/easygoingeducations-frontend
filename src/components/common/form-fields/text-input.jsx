@@ -1,3 +1,4 @@
+"use client"
 import React from "react";
 import { FloatingLabel, FormControl, InputGroup } from "react-bootstrap";
 
@@ -8,29 +9,32 @@ export const TextInput = ({
 	className,
 	iconBefore,
 	iconAfter,
+	...rest
 }) => {
 	return (
 		<InputGroup className={className}>
 			{!!iconBefore && (
-				<InputGroup.Text id={name}>
-					<i className="pi pi-comment"></i>
+				<InputGroup.Text>
+					<i className={`pi pi-${iconBefore}`}></i>
 				</InputGroup.Text>
 			)}
 
-			<FloatingLabel controlId="floatingInput" label={label}>
+			<FloatingLabel controlId={name} label={label}>
 				<FormControl
 					name={name}
-					type="email"
 					placeholder={label}
 					isInvalid={!!errorMessage}
+					{...rest}
 				/>
 				<FormControl.Feedback type="invalid">
 					{errorMessage}
 				</FormControl.Feedback>
 			</FloatingLabel>
-			<InputGroup.Text id={name}>
-				<i className="pi pi-comment"></i>
-			</InputGroup.Text>
+			{!!iconAfter && (
+				<InputGroup.Text>
+					<i className={`pi pi-${iconAfter}`}></i>
+				</InputGroup.Text>
+			)}
 		</InputGroup>
 	);
 };
