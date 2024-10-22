@@ -1,29 +1,35 @@
-"use server"
-
-import { transformFormDataToJSON } from "@/helpers/form-validation"
+"use server";
+import {
+	response,
+	transformFormDataToJSON,
+	transformYupErrors,
+	YupValidationError,
+} from "@/helpers/form-validation";
 import { ContactSchema } from "@/helpers/schemas/contact-schema";
 import { createContactMessage } from "@/services/contact-service";
+import { revalidatePath } from "next/cache";
 
+export const createContactMessageAction = async (prevState, formData) => {
+	const fields = transformFormDataToJSON(formData);
 
+	try {
+		ContactSchema.validateSync(fields, { abortEarly: false });
 
+		const res = await createContactMessage(fields);
+		const data = await res.json();
 
-export const createContactmessageAction = async (prevState, formData) => {
-    
-    const fields = transformFormDataToJSON(formData);
+		if (!res.ok) {
+			return response(false, "", data?.validations);
+		}
 
-    try {
-        ContactSchema.validateSync(fields, { abortEarly: false });
+		revalidatePath("/dashboard/contact-message");
 
-        const res = await createContactMessage(fields);
-        const data = await res.json();
+		return response(true, "Your message was sent successfully", null);
+	} catch (err) {
+		if (err instanceof YupValidationError) {
+			return transformYupErrors(err.inner);
+		}
 
-        console.log(data)
-
-
-
-    } catch (err) {
-        
-    }
-
-
-}
+		throw err;
+	}
+};
