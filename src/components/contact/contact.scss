@@ -23,21 +23,26 @@
         }
 
         @media(min-width: 1200px){
-            width: 50%;
+            width: 70%;
         }
     }
 
     .contact-row{
-        @include flex($fw: nowrap);
+        @include flex($fw: nowrap, $gap:20px);
     }
 
     .contact-menu{
         flex-direction: column;
         display: none;
+        flex:3;
 
-        @media(min-width: 768px){
+        @media(min-width: 1200px){
             display: flex;
         }
 
+    }
+
+    .contact-form{
+        flex:5;
     }
 }
