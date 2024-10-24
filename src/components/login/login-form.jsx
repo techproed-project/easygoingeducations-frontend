@@ -1,9 +1,8 @@
 "use client"
 import React from "react";
 import { Card } from "react-bootstrap";
-import { TextInput } from "../common/form-fields/text-input";
-import { SubmitButton } from "../common/form-fields/submit-button";
 import "./login-form.scss";
+import { PasswordInput, TextInput, SubmitButton } from "../common/form-fields";
 
 export const LoginForm = () => {
 	return (
@@ -19,11 +18,10 @@ export const LoginForm = () => {
 							className="mb-3"
                             iconBefore="user"
 						/>
-						<TextInput
+						<PasswordInput
 							label="Password"
 							name="password"
 							className="mb-3"
-							type="password"
                             iconBefore="key"
 						/>
                         <SubmitButton title="Login" />

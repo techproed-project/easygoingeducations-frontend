@@ -1,9 +1,11 @@
-
+@use "../../styles/variables" as *;
+@use "../../styles/mixins" as *;
 
 .login-form{
     width: 98%;
     margin:auto;
-
+    
+    
     @media(min-width: 576px){
         width: 80%;
     }
@@ -13,6 +15,27 @@
     }
 
     @media(min-width: 992px){
-        width: 60;
+        width: 60%;
+    }
+
+    @media(min-width: 1200px){
+        width: 40%;
+    }
+
+
+    .card{
+        border-top: 7px solid $color2;
+        padding:0 30px 30px 30px;
+        @include shadow(box, 0 10px 20px -10px $color2-op-50);
+    }
+
+    h4{
+        font-style: italic;
+        font-size: 1.2rem;
+        margin: 20px 0;
+    }
+
+    button{
+        width:100%;
     }
 }
