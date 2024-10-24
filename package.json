@@ -9,17 +9,22 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "auth": "^1.2.3",
     "bootstrap": "^5.3.3",
+    "dom": "^0.0.3",
     "moment": "^2.30.1",
     "next": "14.2.15",
     "next-auth": "^4.24.8",
+    "prime": "^0.5.0",
     "primeicons": "^7.0.0",
     "primereact": "^10.8.4",
-    "react": "^18",
+    "react": "^18.3.1",
     "react-bootstrap": "^2.10.5",
-    "react-dom": "^18",
+    "react-dom": "^18.3.1",
+    "reatc": "^0.0.1-security",
     "sass": "^1.79.5",
     "sweetalert2": "^11.14.3",
+    "swiper": "^11.1.14",
     "yup": "^1.4.0"
   },
   "devDependencies": {
