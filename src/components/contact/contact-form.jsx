@@ -1,5 +1,5 @@
 "use client"
-import React from "react";
+import React, { useRef } from "react";
 import {
 	Button,
 	Col,
@@ -10,17 +10,24 @@ import { SubmitButton } from "../common/form-fields/submit-button";
 import { useFormState } from "react-dom";
 import { createContactMessageAction } from "@/actions/contact-actions";
 import { initialResponse } from "@/helpers/form-validation";
+import { swAlert } from "@/helpers/sweetalert";
 
 export const ContactForm = () => {
-
     const [state, dispatch] = useFormState(createContactMessageAction, initialResponse);
+    const refForm = useRef(null);
 
-    console.log(state)
 
-    /// Donen mesajlari sweetAlert ile goster
+    if(state.message){
+        if(state.ok){
+            swAlert(state.message, "success");
+            refForm.current.reset();
+        }else{
+            swAlert(state.message, "error");
+        }
+    }
 
 	return (
-		<form className="contact-form" action={dispatch}>
+		<form className="contact-form" action={dispatch} ref={refForm}>
 			<Row>
 				<Col md={6}>
 					<TextInput
